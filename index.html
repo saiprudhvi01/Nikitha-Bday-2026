@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday, Nikitha! 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FFF2CE;--paper:#FFFBF0;--ink:#251A33;--pink:#FF4D86;--pd:#E23372;--purple:#7C4DFF;--pp:#5B2BE0;--teal:#00BFA6;--yellow:#FFC94D;--sh:0 16px 36px rgba(37,26,51,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;width:100%;overflow:hidden}
+body{font-family:'Quicksand',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Baloo 2',cursive}
+#cv{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:9999}
+.rain,.spark{position:fixed;z-index:9998;pointer-events:none}
+.rain{top:-60px;animation:rain linear forwards}
+@keyframes rain{to{transform:translateY(115vh) rotate(360deg)}}
+.spark{font-size:16px;animation:sp .8s ease-out forwards}
+@keyframes sp{to{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes wave{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px) rotate(2deg)}}
+
+#cover{position:fixed;inset:0;z-index:9000;background:radial-gradient(circle at 30% 20%,#8a5cff,#6a2fe6 45%,#3d1a8f);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;text-align:center;cursor:pointer;transition:opacity .7s,visibility .7s;padding:24px}
+#cover.hide{opacity:0;visibility:hidden;pointer-events:none}
+.ring{position:absolute;border:2px dashed rgba(255,255,255,.35);border-radius:50%;animation:spin 30s linear infinite}
+.cf{position:absolute;font-size:28px;animation:bob 3s ease-in-out infinite}
+.gift-big{font-size:clamp(64px,18vw,110px);animation:wig 1.4s ease-in-out infinite}
+@keyframes wig{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(8deg) scale(1.12)}}
+.ct{color:#fff;font:700 clamp(24px,6vw,40px) 'Baloo 2'}
+.cs{color:#FFE7B3;font:400 clamp(12px,3.4vw,16px) 'Space Mono';letter-spacing:.12em;text-transform:uppercase;animation:pl 1.4s infinite}
+@keyframes pl{50%{opacity:.4}}
+
+#prog{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:50}
+#prog i{width:10px;height:10px;border-radius:50%;background:rgba(37,26,51,.2);border:2px solid var(--ink);transition:.4s}
+#prog i.on{background:var(--pink);transform:scale(1.35)}
+#prog i.done{background:var(--ink)}
+
+.pages{width:100%;height:100%;position:relative}
+.page{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;padding:clamp(38px,6vw,56px) clamp(16px,4vw,40px) 24px;overflow-y:auto;overflow-x:hidden;opacity:0;visibility:hidden;transform:translateX(60px) scale(.96);transition:opacity .6s,transform .6s cubic-bezier(.16,1,.3,1),visibility .6s;pointer-events:none}
+.page.active{opacity:1;visibility:visible;transform:none;pointer-events:auto;z-index:2}
+.inner{margin:auto;width:100%;text-align:center;max-width:680px}
+.tag{display:inline-block;background:var(--ink);color:var(--yellow);padding:6px 16px;border-radius:999px;font:400 clamp(11px,2.6vw,13px) 'Space Mono';letter-spacing:.14em;text-transform:uppercase}
+.btn{font:700 clamp(15px,3.6vw,19px) 'Baloo 2';border:none;border-radius:999px;padding:13px 30px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:.15s;color:#fff;background:var(--purple)}
+.btn:hover{transform:translateY(-2px) rotate(-1deg);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translateY(2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.bn{animation:bob 1.6s ease-in-out infinite}
+.btn.hid{opacity:0;pointer-events:none;transform:translateY(20px)}
+.btn.show{opacity:1;pointer-events:auto;transform:none}
+.h2{font-size:clamp(24px,5.5vw,36px);font-weight:700;margin:12px 0 8px;line-height:1.15}
+.hint{color:#6b5a7c;font-weight:600;font-size:clamp(13px,3vw,16px);margin-bottom:14px}
+.card{background:var(--paper);border:3px solid var(--ink);border-radius:26px;box-shadow:var(--sh);padding:clamp(20px,5vw,36px);animation:pop .7s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.8) rotate(-3deg);opacity:0}}
+
+/* hero */
+#p0{background:linear-gradient(180deg,var(--cream),#FFE9B8)}
+.bl{position:absolute;bottom:-140px;width:60px;height:76px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;opacity:.8;pointer-events:none;animation:up linear infinite}
+.bl::after{content:'';position:absolute;left:50%;top:100%;width:2px;height:60px;background:rgba(37,26,51,.35)}
+@keyframes up{to{transform:translateY(-115vh) translateX(25px) rotate(-6deg);opacity:.3}}
+.name{font-size:clamp(40px,12.5vw,100px);font-weight:800;line-height:.95;margin:14px 0;display:flex;justify-content:center;flex-wrap:wrap}
+.name span{display:inline-block;opacity:0;animation:li .7s cubic-bezier(.2,1.4,.4,1) forwards,wave 2.4s ease-in-out 1.5s infinite;background:linear-gradient(180deg,var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes li{from{transform:translateY(40px) rotate(-6deg)}to{opacity:1;transform:none}}
+.sub{font-size:clamp(15px,3.5vw,19px);color:#5a4a6b;font-weight:600;margin:12px auto 22px;max-width:480px;min-height:4.2em}
+.cur{display:inline-block;width:2px;height:1em;background:var(--ink);vertical-align:-2px;animation:bk .7s steps(1) infinite}
+@keyframes bk{50%{opacity:0}}
+.cd{display:flex;gap:clamp(8px,2.5vw,16px);justify-content:center;margin-bottom:24px}
+.cb{background:var(--paper);border:3px solid var(--ink);border-radius:16px;padding:10px 14px;min-width:64px;box-shadow:5px 5px 0 var(--ink)}
+.cb.pu{animation:pb .4s}
+@keyframes pb{40%{transform:scale(1.12) rotate(2deg)}}
+.cn{font:700 clamp(24px,6vw,36px) 'Baloo 2';color:var(--pd);line-height:1}
+.cl{font:400 10px 'Space Mono';letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
+
+/* gift */
+#p1{background:linear-gradient(180deg,#FFE9B8,#FFD9E6)}
+.cake{position:relative;width:150px;height:120px;margin:34px auto 14px;animation:bob 2s ease-in-out infinite}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:10px;border:3px solid var(--ink)}
+.t1{bottom:0;width:150px;height:48px;background:var(--pink)}
+.t2{bottom:44px;width:104px;height:38px;background:var(--yellow)}
+.tier::before{content:'';position:absolute;left:0;right:0;top:0;height:12px;background:#fff;border-radius:8px 8px 14px 14px;opacity:.85}
+.can{position:absolute;left:50%;bottom:80px;width:8px;height:28px;margin-left:-4px;background:var(--teal);border:2px solid var(--ink);border-radius:3px}
+.fl{position:absolute;left:50%;margin-left:-8px;width:16px;height:22px;background:radial-gradient(ellipse at bottom,#FF6B35,#FFD93D 70%,transparent);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;animation:fk .3s ease-in-out infinite alternate;transform-origin:bottom}
+@keyframes fk{to{transform:scale(1.15,1.1) rotate(3deg)}}
+.fl.out{animation:bo .5s forwards}
+@keyframes bo{50%{transform:scale(1.5);opacity:.5}to{transform:scale(0);opacity:0}}
+.ga{position:relative;height:clamp(170px,34vw,210px);width:100%}
+#yes{background:var(--pink);position:absolute;top:10px;left:calc(50% - 90px);white-space:nowrap;z-index:3;transition:top .28s cubic-bezier(.3,1.4,.5,1),left .28s cubic-bezier(.3,1.4,.5,1)}
+#no{background:var(--teal);position:absolute;bottom:10px;left:calc(50% - 80px);z-index:2}
+.taunt{position:absolute;background:var(--ink);color:var(--yellow);font:400 12px 'Space Mono';padding:4px 10px;border-radius:8px;white-space:nowrap;opacity:0;transition:.25s;pointer-events:none;transform:translateX(-50%);top:-30px;left:50%}
+.taunt.show{opacity:1}
+
+/* quiz */
+#p2{background:var(--cream)}
+.qn{font:400 12px 'Space Mono';letter-spacing:.1em;color:#6b5a7c;margin-bottom:6px}
+.opts{display:grid;gap:10px;margin:16px 0}
+.opt{font:700 clamp(14px,3.4vw,17px) 'Quicksand';background:#fff;border:3px solid var(--ink);border-radius:14px;padding:12px 14px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:.15s;text-align:left}
+.opt:hover{transform:translateX(4px)}
+.opt.pick{background:var(--yellow);animation:pop .4s}
+.opt.dim{opacity:.4;pointer-events:none}
+.react{min-height:3.2em;font-weight:700;color:var(--pd);font-size:clamp(14px,3.4vw,17px);margin-bottom:10px}
+
+/* balloons */
+#p3{background:linear-gradient(180deg,#E6F9F6,#EFE8FF)}
+.field{position:relative;height:clamp(240px,48vh,340px);width:100%;max-width:560px;margin:8px auto}
+.pb{position:absolute;width:66px;height:82px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;cursor:pointer;border:3px solid var(--ink);animation:bob var(--d) ease-in-out infinite;transition:transform .2s;font-size:26px;display:flex;align-items:center;justify-content:center}
+.pb::after{content:'';position:absolute;left:50%;top:100%;width:2px;height:34px;background:var(--ink)}
+.pb:hover{transform:scale(1.1)}
+.pb.gone{animation:none;transform:scale(1.6);opacity:0;pointer-events:none;transition:.25s}
+.toast{min-height:5.2em;font:700 clamp(15px,3.6vw,19px) 'Quicksand';background:#fff;border:3px solid var(--ink);border-radius:16px;padding:12px 16px;max-width:520px;margin:8px auto 14px;box-shadow:4px 4px 0 var(--ink);display:flex;align-items:center;justify-content:center}
+
+/* wish */
+#p4{background:linear-gradient(180deg,#FFD9E6,#FFE9B8)}
+.cakes{display:flex;justify-content:center;gap:clamp(18px,6vw,40px);margin:34px 0 18px}
+.cd2{position:relative;width:26px;height:70px;cursor:pointer}
+.cd2 .w{position:absolute;bottom:0;left:50%;margin-left:-7px;width:14px;height:56px;border:3px solid var(--ink);border-radius:4px;background:repeating-linear-gradient(0deg,var(--pink) 0 10px,#fff 10px 20px)}
+.cd2 .fl{bottom:54px}
+
+/* message */
+#p5{background:linear-gradient(160deg,var(--purple),var(--pp) 55%,#3a1a8c);color:#fff}
+#p5 .tag{background:var(--yellow);color:var(--ink)}
+.msg{font-size:clamp(16px,3.8vw,21px);font-weight:600;line-height:1.65;margin:18px 0 20px;min-height:11em}
+.sign{font:700 clamp(16px,3.8vw,21px) 'Baloo 2';color:var(--yellow);margin-bottom:24px;opacity:0;transition:opacity .8s}
+.sign.show{opacity:1}
+.fe{position:absolute;font-size:30px;opacity:.5;animation:bob 3.5s ease-in-out infinite;pointer-events:none}
+
+/* finale */
+#p6{background:linear-gradient(180deg,var(--cream),#FFD9E6)}
+.ft{font-size:clamp(28px,7vw,50px);font-weight:800;margin:10px 0 16px;line-height:1.05}
+.ft b{display:inline-block;animation:wave 1.8s ease-in-out infinite;background:linear-gradient(180deg,var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.pw{position:relative;width:min(76vw,360px);margin:14px auto 24px}
+.glow{position:absolute;inset:-16px;border-radius:50%;background:conic-gradient(var(--pink),var(--yellow),var(--teal),var(--purple),var(--pink));animation:spin 4s linear infinite;filter:blur(14px);opacity:.8}
+.pf{position:relative;border:6px solid var(--ink);border-radius:24px;overflow:hidden;background:#fff;box-shadow:var(--sh);transform:scale(0) rotate(-200deg)}
+#p6.active .pf{animation:pin 1.4s cubic-bezier(.2,1.3,.4,1) .3s forwards,pfl 3s ease-in-out 1.8s infinite}
+@keyframes pin{to{transform:none}}
+@keyframes pfl{50%{transform:translateY(-10px) rotate(1.5deg)}}
+.pf img{width:100%;display:block;max-height:58vh;object-fit:cover}
+.st{position:absolute;font-size:38px;z-index:3;animation:bob 2s ease-in-out infinite}
+.note{font-size:clamp(14px,3vw,17px);color:#5a4a6b;max-width:460px;margin:0 auto;line-height:1.6;font-weight:600}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<!-- Optional music: put your mp3 beside this file, or delete this block -->
+<audio id="song" loop><source src="Aww%20Tera%20Happy%20BdayABCD%202%20Varun%20Dhawan%20Shraddha%20Kapoor%20Sachin%20-%20Jigar%20D.Soldierz%20%20Birthday%20song.mp3" type="audio/mpeg"></audio>
+
+<div id="cover">
+  <div class="ring" style="width:260px;height:260px"></div>
+  <div class="ring" style="width:340px;height:340px;animation-direction:reverse;animation-duration:45s"></div>
+  <div class="cf" style="top:14%;left:12%">🎈</div><div class="cf" style="top:20%;right:14%;animation-delay:.6s">🍰</div>
+  <div class="cf" style="bottom:18%;left:16%;animation-delay:1.1s">🎉</div><div class="cf" style="bottom:14%;right:12%;animation-delay:1.6s">✨</div>
+  <div class="gift-big">🎁</div>
+  <div class="ct">Hey Nikitha, this one's for you.</div>
+  <div class="cs">tap the gift to open</div>
+</div>
+
+<div id="prog"></div>
+
+<div class="pages">
+  <section class="page active" id="p0">
+    <div class="bl" style="left:8%;background:#FF4D86;animation-duration:11s"></div>
+    <div class="bl" style="left:24%;background:#7C4DFF;animation-duration:9s;animation-delay:1.2s"></div>
+    <div class="bl" style="left:50%;background:#FFC94D;animation-duration:13s;animation-delay:3s"></div>
+    <div class="bl" style="left:72%;background:#00BFA6;animation-duration:12s;animation-delay:.6s"></div>
+    <div class="bl" style="left:88%;background:#FF4D86;animation-duration:10s;animation-delay:2s"></div>
+    <div class="inner">
+      <span class="tag">Oct 16 • it's happening</span>
+      <h1 class="name" id="name"></h1>
+      <p class="sub"><span id="typed"></span><span class="cur"></span></p>
+      <div class="cd">
+        <div class="cb"><div class="cn" id="d">00</div><div class="cl">days</div></div>
+        <div class="cb"><div class="cn" id="h">00</div><div class="cl">hrs</div></div>
+        <div class="cb"><div class="cn" id="m">00</div><div class="cl">min</div></div>
+        <div class="cb"><div class="cn" id="s">00</div><div class="cl">sec</div></div>
+      </div>
+      <button class="btn bn" onclick="go(1)">Let's begin →</button>
+    </div>
+  </section>
+
+  <section class="page" id="p1">
+    <div class="inner card">
+      <span class="tag">one quick thing</span>
+      <h2 class="h2">Do you want a gift? 🎁</h2>
+      <p class="hint">Pick carefully. One of these buttons is very bad at commitment.</p>
+      <div class="cake"><div class="tier t1"></div><div class="tier t2"></div><div class="can"></div><div class="fl" id="fl1" style="bottom:108px"></div></div>
+      <div class="ga" id="ga">
+        <div class="taunt" id="taunt"></div>
+        <button class="btn" id="yes">Yes please 🎁</button>
+        <button class="btn" id="no">No, I'm good</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="p2">
+    <div class="inner card">
+      <span class="tag">pop quiz</span>
+      <div class="qn" id="qn"></div>
+      <h2 class="h2" id="qq"></h2>
+      <div class="opts" id="opts"></div>
+      <div class="react" id="react"></div>
+      <button class="btn hid" id="qnext">Next →</button>
+    </div>
+  </section>
+
+  <section class="page" id="p3">
+    <div class="inner">
+      <span class="tag">pop them all</span>
+      <h2 class="h2">Each balloon has a secret 🎈</h2>
+      <div class="field" id="field"></div>
+      <div class="toast" id="toast">Tap a balloon. Don't be shy.</div>
+      <button class="btn hid" id="pnext" onclick="go(4)">Last one, I promise →</button>
+    </div>
+  </section>
+
+  <section class="page" id="p4">
+    <div class="inner card">
+      <span class="tag">make a wish</span>
+      <h2 class="h2">Blow out the candles 🕯️</h2>
+      <p class="hint" id="whint">Tap each candle to blow it out.</p>
+      <div class="cakes" id="cakes"></div>
+      <button class="btn hid" id="wnext" onclick="go(5)">Wish made →</button>
+    </div>
+  </section>
+
+  <section class="page" id="p5">
+    <div class="fe" style="top:12%;left:8%">🎈</div><div class="fe" style="top:18%;right:10%;animation-delay:.8s">🥳</div>
+    <div class="fe" style="bottom:14%;left:12%;animation-delay:1.4s">🍕</div><div class="fe" style="bottom:18%;right:8%;animation-delay:2s">🎂</div>
+    <div class="inner">
+      <span class="tag">the actual message</span>
+      <p class="msg" id="msg"></p>
+      <div class="sign" id="sign">– from the guy who built a whole website instead of buying a gift</div>
+      <button class="btn hid" id="mnext" style="background:var(--pink)" onclick="finale()">🎉 Celebrate 🎉</button>
+    </div>
+  </section>
+
+  <section class="page" id="p6">
+    <div class="inner">
+      <span class="tag">the grand finale</span>
+      <h2 class="ft" id="ft"></h2>
+      <div class="pw">
+        <div class="glow"></div>
+        <div class="st" style="top:-22px;left:-20px">👑</div><div class="st" style="top:-14px;right:-22px;animation-delay:.5s">🎈</div>
+        <div class="st" style="bottom:-18px;left:-22px;animation-delay:1s">🍰</div><div class="st" style="bottom:-20px;right:-20px;animation-delay:1.5s">🥳</div>
+        <div class="pf"><img src="nikitha.jpeg" alt="Nikitha"></div>
+      </div>
+      <p class="note">Hope your day is full of good food, great people and absolutely no work. Now go cut that cake before it gets cold. 🎂</p>
+      <button class="btn" style="background:var(--yellow);color:var(--ink);margin-top:20px" onclick="party()">More confetti 🎊</button>
+    </div>
+  </section>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+/* confetti */
+const cv=$('cv'),cx=cv.getContext('2d');
+function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
+const cols=['#FF4D86','#7C4DFF','#00BFA6','#FFC94D','#FFFFFF'];let ps=[];
+function confetti(x,y,n=80,sp=1){for(let i=0;i<n;i++){const a=Math.random()*6.28,s=(Math.random()*6+3)*sp;
+ ps.push({x,y,vx:Math.cos(a)*s*.6,vy:Math.sin(a)*s-4,z:Math.random()*7+4,c:cols[Math.random()*5|0],r:Math.random()*360,vr:(Math.random()-.5)*12,l:0,m:90+Math.random()*40,sh:Math.random()>.5})}}
+(function t(){cx.clearRect(0,0,cv.width,cv.height);ps.forEach(p=>{p.vy+=.16;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l++;
+ cx.save();cx.translate(p.x,p.y);cx.rotate(p.r*Math.PI/180);cx.globalAlpha=Math.max(0,1-p.l/p.m);cx.fillStyle=p.c;
+ if(p.sh)cx.fillRect(-p.z/2,-p.z/2,p.z,p.z*.6);else{cx.beginPath();cx.arc(0,0,p.z/2,0,6.28);cx.fill()}cx.restore()});
+ ps=ps.filter(p=>p.l<p.m&&p.y<cv.height+50);requestAnimationFrame(t)})();
+function rain(list,n=30){for(let i=0;i<n;i++)setTimeout(()=>{const e=document.createElement('div');e.className='rain';
+ e.textContent=list[Math.random()*list.length|0];e.style.left=Math.random()*100+'vw';e.style.fontSize=(20+Math.random()*26)+'px';
+ e.style.animationDuration=(2.5+Math.random()*2.5)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),5500)},i*90)}
+let ls=0;function spark(e){const n=Date.now();if(n-ls<50)return;ls=n;const q=e.touches?e.touches[0]:e,s=document.createElement('div');
+ s.className='spark';s.textContent=['✨','⭐','💖','🎈'][Math.random()*4|0];s.style.left=q.clientX+'px';s.style.top=q.clientY+'px';
+ s.style.setProperty('--dx',(Math.random()*60-30)+'px');s.style.setProperty('--dy',(Math.random()*60+10)+'px');
+ document.body.appendChild(s);setTimeout(()=>s.remove(),800)}
+addEventListener('mousemove',spark);addEventListener('touchmove',spark,{passive:true});
+function type(el,txt,sp,done){el.textContent='';let i=0;(function f(){if(i<txt.length){el.textContent+=txt[i++];setTimeout(f,sp)}else done&&done()})()}
+
+/* navigation + progress dots */
+const N=7,onEnter={};
+for(let i=0;i<N;i++)$('prog').appendChild(document.createElement('i'));
+let cur=0;
+function go(i){document.querySelector('.page.active').classList.remove('active');$('p'+i).classList.add('active');cur=i;
+ [...$('prog').children].forEach((d,k)=>d.className=k<i?'done':k==i?'on':'');
+ onEnter[i]&&onEnter[i]();if(i>0)confetti(innerWidth/2,innerHeight*.3,40,.8)}
+$('prog').children[0].className='on';
+
+/* cover + hero */
+let hs=false;
+function hero(){if(hs)return;hs=true;[...'NIKITHA'].forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;
+ s.style.animationDelay=(i*.09)+'s,'+(1.5+i*.15)+'s';$('name').appendChild(s)});
+ setTimeout(()=>type($('typed'),"Another year older, same amount of cake required. I made you a tiny website to mark the occasion. Brace yourself.",32),700)}
+$('cover').onclick=()=>{confetti(innerWidth/2,innerHeight*.35,140,1.4);rain(['🎈','🎉','🍰','✨'],20);$('cover').classList.add('hide');hero();
+ const a=$('song');a&&a.play().catch(()=>{})};
+setTimeout(hero,1200);
+
+const T=new Date('2026-10-16T00:00:00+05:30').getTime();let ll=null;
+function cdt(){const f=T-Date.now();if(f<=0){['d','h','m','s'].forEach(i=>$(i).textContent='00');return}
+ const v={d:f/864e5|0,h:f/36e5%24|0,m:f/6e4%60|0,s:f/1e3%60|0};for(const k in v)$(k).textContent=String(v[k]).padStart(2,'0');
+ if(v.s!==ll){const b=$('s').parentElement;b.classList.remove('pu');void b.offsetWidth;b.classList.add('pu');ll=v.s}}
+cdt();setInterval(cdt,1000);
+
+/* gift dodge */
+const ga=$('ga'),yes=$('yes'),no=$('no'),tn=$('taunt'),tx=["nice try 😏","almost!","nope 🙅","too slow","can't catch me","cake first, gift later"];
+let tt,dg=0;
+function dodge(){const r=ga.getBoundingClientRect(),w=yes.offsetWidth||140,h=yes.offsetHeight||50,L=Math.random()*Math.max(r.width-w,10),T2=Math.random()*Math.max(r.height-h,10);
+ yes.style.left=L+'px';yes.style.top=T2+'px';yes.style.transform='rotate('+(Math.random()*20-10)+'deg)';
+ tn.textContent=tx[Math.random()*tx.length|0];tn.style.left=(L+w/2)+'px';tn.style.top=(T2-30)+'px';tn.classList.add('show');
+ clearTimeout(tt);tt=setTimeout(()=>tn.classList.remove('show'),700);if(++dg==5)no.textContent="Fine, I give up 🕯️"}
+['mouseenter','touchstart','pointerdown','click'].forEach(e=>yes.addEventListener(e,x=>{x.preventDefault();dodge()},{passive:false}));
+no.onclick=()=>{const r=no.getBoundingClientRect();confetti(r.left+r.width/2,r.top,70,1);$('fl1').classList.add('out');
+ yes.style.display=no.style.display='none';setTimeout(()=>go(2),900)};
+
+/* quiz */
+const Q=[
+ {q:"What's the most important thing at a birthday?",o:[["The cake","Correct. Anyone who says otherwise is lying or on a diet."],["The gifts","Bold of you to say that to the person who made this page."],["Free food everywhere","Smart. Birthdays are basically a food festival."],["A day off","Fair. Sadly, nobody gave you one."]]},
+ {q:"How many candles should go on your cake?",o:[["All of them","Brave. We'll keep a fire extinguisher nearby."],["Just one, for safety","Sensible, but boring. Denied."],["Zero, I'm 21 forever","Great answer. Math has no say here."],["Whatever the cake can handle","Smart. That cake is already sweating."]]},
+ {q:"What's your birthday superpower today?",o:[["Eating without guilt","Unlocked. Calories are officially off duty."],["Ignoring all texts","Valid, until the cake arrives."],["Getting away with everything","Use it wisely. Or don't, it's your day."],["Free upgrades everywhere","Try it. The worst they can say is no."]]}
+];
+let qi=0;
+function showQ(){const q=Q[qi];$('qn').textContent='Question '+(qi+1)+' of '+Q.length;$('qq').textContent=q.q;$('react').textContent='';
+ $('qnext').className='btn hid';$('qnext').textContent=qi==Q.length-1?'Done →':'Next →';
+ $('opts').innerHTML='';q.o.forEach(([t,r],k)=>{const b=document.createElement('button');b.className='opt';b.textContent=t;
+  b.onclick=()=>{[...$('opts').children].forEach(c=>c.classList.add('dim'));b.classList.remove('dim');b.classList.add('pick');
+   type($('react'),r,22);confetti(innerWidth/2,innerHeight*.5,30,.7);$('qnext').className='btn show'};$('opts').appendChild(b)})}
+onEnter[2]=()=>{qi=0;showQ()};
+$('qnext').onclick=()=>{if(++qi<Q.length)showQ();else go(3)};
+
+/* balloons */
+const L=["Reminder: calories don't count on birthdays.","Today, \"I'll start tomorrow\" is a perfectly valid plan.","You don't look a day older. Maybe two days, but who's counting?","If anyone asks your age, say \"old enough for second helpings\".","You're officially allowed to say \"it's my birthday\" to get out of anything.","Fun fact: people who have more birthdays tend to live longer. Keep going."];
+const bc=['#FF4D86','#7C4DFF','#00BFA6','#FFC94D','#FF8A5C','#4DA6FF'],em=['🎁','⭐','🍰','🎉','💖','🥳'];
+let popped=0;
+onEnter[3]=()=>{if($('field').children.length)return;L.forEach((l,i)=>{const b=document.createElement('div');b.className='pb';
+ b.style.cssText='background:'+bc[i]+';left:'+(6+(i%3)*32+Math.random()*6)+'%;top:'+(i<3?4:48)+'%;--d:'+(2+Math.random()*2)+'s;animation-delay:'+(i*.3)+'s';
+ b.textContent='?';b.onclick=()=>{const r=b.getBoundingClientRect();confetti(r.left+33,r.top+40,40,.9);b.classList.add('gone');
+  type($('toast'),em[i]+' '+l,20);if(++popped==L.length){setTimeout(()=>$('pnext').className='btn show',900)}};$('field').appendChild(b)})};
+
+/* candles */
+let out=0;
+onEnter[4]=()=>{if($('cakes').children.length)return;for(let i=0;i<5;i++){const c=document.createElement('div');c.className='cd2';
+ c.innerHTML='<div class="w"></div><div class="fl"></div>';c.onclick=()=>{if(c.dataset.o)return;c.dataset.o=1;c.querySelector('.fl').classList.add('out');out++;
+  const l=5-out;$('whint').textContent=l?l+" left. Don't skip any, I'm watching.":"All out. Keep your wish secret. No, you can't tell me.";
+  if(!l){confetti(innerWidth/2,innerHeight*.4,120,1.3);setTimeout(()=>$('wnext').className='btn show',700)}};$('cakes').appendChild(c)}};
+
+/* message */
+onEnter[5]=()=>{setTimeout(()=>type($('msg'),
+ "Happy birthday, Nikitha! I hope today is packed with good food, nice surprises and people who spoil you a little too much. You get full permission to eat dessert first, ignore your alarm and use \"it's my birthday\" as a reason for everything. Enjoy it, you've earned it.",
+ 26,()=>{$('sign').classList.add('show');$('mnext').className='btn show'}),500)};
+
+/* finale */
+function party(){confetti(innerWidth/2,innerHeight/2,150,1.5);setTimeout(()=>confetti(innerWidth*.3,innerHeight*.4,100,1.2),200);
+ setTimeout(()=>confetti(innerWidth*.7,innerHeight*.4,100,1.2),400);rain(['🎂','🎈','🎉','🥳','🍰','✨','💖'],36)}
+let fl;
+onEnter[6]=()=>{if(!$('ft').children.length){let i=0;['Happy','Birthday,','Nikitha!','🎂'].forEach(w=>{const s=document.createElement('span');
+  s.style.cssText='display:inline-block;margin:0 .15em;white-space:nowrap';[...w].forEach(c=>{const b=document.createElement('b');b.textContent=c;
+  b.style.animationDelay=(i++*.07)+'s';s.appendChild(b)});$('ft').appendChild(s)})}
+ setTimeout(()=>confetti(innerWidth/2,innerHeight*.5,160,1.6),1200);clearInterval(fl);
+ fl=setInterval(()=>confetti(Math.random()*innerWidth,innerHeight*.15,40,.9),2500)};
+function finale(){party();setTimeout(()=>go(6),800)}
+</script>
+</body>
+</html>

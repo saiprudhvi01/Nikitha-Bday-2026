@@ -324,7 +324,7 @@ onEnter[2]=()=>{qi=0;showQ()};
 $('qnext').onclick=()=>{if(++qi<Q.length)showQ();else go(3)};
 
 /* balloons */
-const L=["Reminder: calories do not count on birthdays.","Today I will start tomorrow is a perfectly valid plan.","You do not look a day older. Maybe two days but who is counting.","If anyone asks your age say old enough for second helpings.","You are officially allowed to say it is my birthday to get out of anything.","Fun fact: people who have more birthdays tend to live longer. Keep going."];
+const L=["Reminder: calories do not count on birthdays.","Today I will start tomorrow is a perfectly valid plan.","You do not look a day older. Maybe two days but who is counting.","If anyone asks your age just say you are old enough.","You are officially allowed to say it is my birthday to get out of anything.","Fun fact: people who have more birthdays tend to live longer. Keep going."];
 const bc=['#FF4D86','#7C4DFF','#00BFA6','#FFC94D','#FF8A5C','#4DA6FF'],em=['🎁','⭐','🍰','🎉','💖','🥳'];
 let popped=0;
 onEnter[3]=()=>{if($('field').children.length)return;L.forEach((l,i)=>{const b=document.createElement('div');b.className='pb';

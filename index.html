@@ -230,7 +230,7 @@ h1,h2{font-family:'Baloo 2',cursive}
     <div class="inner">
       <span class="tag">the actual message</span>
       <p class="msg" id="msg"></p>
-      <div class="sign" id="sign">– from the guy who built a whole website instead of buying a gift</div>
+      <div class="sign" id="sign"></div>
       <button class="btn hid" id="mnext" style="background:var(--pink)" onclick="finale()">🎉 Celebrate 🎉</button>
     </div>
   </section>
@@ -324,7 +324,7 @@ onEnter[2]=()=>{qi=0;showQ()};
 $('qnext').onclick=()=>{if(++qi<Q.length)showQ();else go(3)};
 
 /* balloons */
-const L=["Reminder: calories don't count on birthdays.","Today, \"I'll start tomorrow\" is a perfectly valid plan.","You don't look a day older. Maybe two days, but who's counting?","If anyone asks your age, say \"old enough for second helpings\".","You're officially allowed to say \"it's my birthday\" to get out of anything.","Fun fact: people who have more birthdays tend to live longer. Keep going."];
+const L=["Reminder: calories don't count on birthdays.","Today, I'll start tomorrow is a perfectly valid plan.","You don't look a day older. Maybe two days, but who's counting?","If anyone asks your age, say old enough for second helpings.","You're officially allowed to say it's my birthday to get out of anything.","Fun fact: people who have more birthdays tend to live longer. Keep going."];
 const bc=['#FF4D86','#7C4DFF','#00BFA6','#FFC94D','#FF8A5C','#4DA6FF'],em=['🎁','⭐','🍰','🎉','💖','🥳'];
 let popped=0;
 onEnter[3]=()=>{if($('field').children.length)return;L.forEach((l,i)=>{const b=document.createElement('div');b.className='pb';
@@ -341,8 +341,8 @@ onEnter[4]=()=>{if($('cakes').children.length)return;for(let i=0;i<5;i++){const 
 
 /* message */
 onEnter[5]=()=>{setTimeout(()=>type($('msg'),
- "Happy birthday, Nikitha! I hope today is packed with good food, nice surprises and people who spoil you a little too much. You get full permission to eat dessert first, ignore your alarm and use \"it's my birthday\" as a reason for everything. Enjoy it, you've earned it.",
- 26,()=>{$('sign').classList.add('show');$('mnext').className='btn show'}),500)};
+  "Happy birthday, Nikitha! I hope today is packed with good food, nice surprises and people who spoil you a little too much. You get full permission to eat dessert first, ignore your alarm and use it's my birthday as a reason for everything. Enjoy it, you've earned it.",
+  26,()=>{$('sign').classList.add('show');$('mnext').className='btn show'}),500)};
 
 /* finale */
 function party(){confetti(innerWidth/2,innerHeight/2,150,1.5);setTimeout(()=>confetti(innerWidth*.3,innerHeight*.4,100,1.2),200);

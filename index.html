@@ -325,23 +325,23 @@ $('qnext').onclick=()=>{if(++qi<Q.length)showQ();else go(3)};
 
 /* balloons */
 const L=["Reminder: calories do not count on birthdays.","Today I will start tomorrow is a perfectly valid plan.","You do not look a day older. Maybe two days but who is counting.","If anyone asks your age just say you are old enough.","You are officially allowed to say it is my birthday to get out of anything.","Fun fact: people who have more birthdays tend to live longer. Keep going."];
-const bc=['#FF4D86','#7C4DFF','#00BFA6','#FFC94D','#FF8A5C','#4DA6FF'],em=['🎁','⭐','🍰','🎉','💖','🥳'];
+const bc=['#FF4D86','#7C4DFF','#00BFA6','#FFC94D','#FF8A5C','#4DA6FF'],em=[];
 let popped=0;
 onEnter[3]=()=>{if($('field').children.length)return;L.forEach((l,i)=>{const b=document.createElement('div');b.className='pb';
  b.style.cssText='background:'+bc[i]+';left:'+(6+(i%3)*32+Math.random()*6)+'%;top:'+(i<3?4:48)+'%;--d:'+(2+Math.random()*2)+'s;animation-delay:'+(i*.3)+'s';
  b.textContent='?';b.onclick=()=>{const r=b.getBoundingClientRect();confetti(r.left+33,r.top+40,40,.9);b.classList.add('gone');
-  type($('toast'),em[i]+' '+l,20);if(++popped==L.length){setTimeout(()=>$('pnext').className='btn show',900)}};$('field').appendChild(b)})};
+  type($('toast'),l,20);if(++popped==L.length){setTimeout(()=>$('pnext').className='btn show',900)}};$('field').appendChild(b)})};
 
 /* candles */
 let out=0;
 onEnter[4]=()=>{if($('cakes').children.length)return;for(let i=0;i<5;i++){const c=document.createElement('div');c.className='cd2';
  c.innerHTML='<div class="w"></div><div class="fl"></div>';c.onclick=()=>{if(c.dataset.o)return;c.dataset.o=1;c.querySelector('.fl').classList.add('out');out++;
-  const l=5-out;$('whint').textContent=l?l+" left. Don't skip any, I'm watching.":"All out. Keep your wish secret. No, you can't tell me.";
+  const l=5-out;$('whint').textContent=l?l+" left. Do not skip any I am watching.":"All out. Keep your wish secret. No you can not tell me.";
   if(!l){confetti(innerWidth/2,innerHeight*.4,120,1.3);setTimeout(()=>$('wnext').className='btn show',700)}};$('cakes').appendChild(c)}};
 
 /* message */
 onEnter[5]=()=>{setTimeout(()=>type($('msg'),
-  "Happy birthday, Nikitha! I hope today is packed with good food, nice surprises and people who spoil you a little too much. You get full permission to eat dessert first, ignore your alarm and use it's my birthday as a reason for everything. Enjoy it, you've earned it.",
+  "Happy birthday, Nikitha! I hope today is packed with good food, nice surprises and people who spoil you a little too much. You get full permission to eat dessert first, ignore your alarm and use it is my birthday as a reason for everything. Enjoy it, you have earned it.",
   26,()=>{$('sign').classList.add('show');$('mnext').className='btn show'}),500)};
 
 /* finale */
